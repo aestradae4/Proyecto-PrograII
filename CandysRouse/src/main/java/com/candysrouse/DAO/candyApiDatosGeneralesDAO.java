@@ -41,6 +41,7 @@ public class candyApiDatosGeneralesDAO {
     //Consulta DELETE para eliminar un registro en especifico de la DB
     String DELETE = "DELETE FROM gearsgtc_java_panaderia.tblDatosGenerales where idDatosGenerales = ";
     //Consulta UPDATE para actualizar datos de un registro en especifico
+    //Se realizo prueba del update
     String UPDATE = "UPDATE gearsgtc_java_panaderia.tblDatosGenerales SET dpi = ?, nit = ?, correo = ?,"
             + " nombre = ?, apellido = ?, direccion = ?, telefono = ?, fechaRegistro = ?,"
             + " registroActivo = ?, idTipoPersona = ?  WHERE idDatosGenerales = ?";
