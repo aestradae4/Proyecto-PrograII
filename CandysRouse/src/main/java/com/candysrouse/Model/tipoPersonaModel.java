@@ -9,10 +9,13 @@ public class tipoPersonaModel {
         this.nombre = nombre;
     }
 
+<<<<<<< HEAD
     public tipoPersonaModel() {
 
     }
 
+=======
+>>>>>>> APIs
     public String getNombre() {
         return nombre;
     }
@@ -28,4 +31,17 @@ public class tipoPersonaModel {
     public void setIdTipoPersona(int idTipoPersona) {
         this.idTipoPersona = idTipoPersona;
     }
+<<<<<<< HEAD
+=======
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("tipoPersonaModel{idTipoPersona=").append(idTipoPersona);
+        sb.append(", nombre=").append(nombre);
+        sb.append('}');
+        return sb.toString();
+    }
+
+>>>>>>> APIs
 }

@@ -10,9 +10,12 @@ public class recetaModel {
         this.nombreReceta = nombreReceta;
     }
 
+<<<<<<< HEAD
     public recetaModel() {
     }
 
+=======
+>>>>>>> APIs
     public int getIdReceta() {
         return idReceta;
     }
@@ -28,4 +31,17 @@ public class recetaModel {
     public void setNombreReceta(String nombreReceta) {
         this.nombreReceta = nombreReceta;
     }
+<<<<<<< HEAD
+=======
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("recetaModel{idReceta=").append(idReceta);
+        sb.append(", nombreReceta=").append(nombreReceta);
+        sb.append('}');
+        return sb.toString();
+    }
+
+>>>>>>> APIs
 }
