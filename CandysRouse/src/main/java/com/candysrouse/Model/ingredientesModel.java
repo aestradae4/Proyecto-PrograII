@@ -2,9 +2,9 @@ package com.candysrouse.Model;
 
 public class ingredientesModel {
 
-    private int idReceta;
-    private int idMateriaPrima;
-    private int cantidad;
+    int idReceta;
+    int idMateriaPrima;
+    int cantidad;
 
     public ingredientesModel(int idReceta, int idMateriaPrima, int cantidad) {
         this.idReceta = idReceta;
@@ -33,10 +33,6 @@ public class ingredientesModel {
 
     public int getCantidad() {
         return this.cantidad;
-    }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
     }
-
 }

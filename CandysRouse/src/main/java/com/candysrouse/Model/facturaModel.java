@@ -2,11 +2,11 @@ package com.candysrouse.Model;
 
 public class facturaModel {
 
-    private int idFactura;
-    private int idDatosGenerales;
-    private int idEmpresa;
-    private String fecha;
-    private double monto;
+    int idFactura;
+    int idDatosGenerales;
+    int idEmpresa;
+    String fecha;
+    double monto;
 
     public facturaModel() {
     }
@@ -59,4 +59,5 @@ public class facturaModel {
         this.monto = monto;
     }
 
+    
 }

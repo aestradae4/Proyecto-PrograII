@@ -2,11 +2,11 @@ package com.candysrouse.Model;
 
 public class empresaModel {
 
-    private int idEmpresa;
-    private int nitEmpresa;
-    private int telefonoEmpresa;
-    private String direccionEmpresa;
-    private int idDatosGenerales;
+    int idEmpresa;
+    int nitEmpresa;
+    int telefonoEmpresa;
+    String direccionEmpresa;
+    int idDatosGenerales;
 
     public empresaModel(int idEmpresa, int nitEmpresa, int telefonoEmpresa, String direccionEmpresa, int idDatosGenerales) {
         this.idEmpresa = idEmpresa;
@@ -17,7 +17,6 @@ public class empresaModel {
     }
 
     public empresaModel() {
-
     }
 
     public int getIdEmpresa() {
@@ -37,7 +36,7 @@ public class empresaModel {
     }
 
     public int getTelefonoEmpresa() {
-        return telefonoEmpresa;
+        return this.telefonoEmpresa;
     }
 
     public void setTelefonoEmpresa(int telefonoEmpresa) {
@@ -52,11 +51,13 @@ public class empresaModel {
         this.direccionEmpresa = direccionEmpresa;
     }
 
-    public void setidDatosGenerales(int idDatosGenerales) {
+    public int getIdDatosGenerales() {
+        return this.idDatosGenerales;
+    }
+
+    public void setIdDatosGenerales(int idDatosGenerales) {
         this.idDatosGenerales = idDatosGenerales;
     }
 
-    public int getidDatosGerenales() {
-        return this.idDatosGenerales;
-    }
+    
 }

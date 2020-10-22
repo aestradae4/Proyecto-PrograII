@@ -18,35 +18,38 @@ public class proveedorModel {
         this.credito = credito;
     }
 
-    public int getidProveedor() {
+    public boolean isCredito() {
+        return this.credito;
+    }
+
+    public void setCredito(boolean credito) {
+        this.credito = credito;
+    }
+
+    public int getIdProveedor() {
         return this.idProveedor;
     }
 
-    public void setidProveedor(int idProveedor) {
+    public void setIdProveedor(int idProveedor) {
         this.idProveedor = idProveedor;
     }
 
-    public int getidEmpresa() {
+    public int getIdEmpresa() {
         return this.idEmpresa;
     }
 
-    public void setidEmpresa(int idEmpresa) {
+    public void setIdEmpresa(int idEmpresa) {
         this.idEmpresa = idEmpresa;
     }
 
-    public int getdiasCredito() {
+    public int getDiasCredito() {
         return this.diasCredito;
     }
 
-    public void setdiasCredito(int diasCredito) {
+    public void setDiasCredito(int diasCredito) {
         this.diasCredito = diasCredito;
     }
 
-    public int getcredito() {
-        return this.diasCredito;
-    }
+  
 
-    public void setcredito(int diasCredito) {
-        this.diasCredito = diasCredito;
-    }
 }

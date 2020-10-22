@@ -28,4 +28,5 @@ public class tipoPersonaModel {
     public void setIdTipoPersona(int idTipoPersona) {
         this.idTipoPersona = idTipoPersona;
     }
+
 }

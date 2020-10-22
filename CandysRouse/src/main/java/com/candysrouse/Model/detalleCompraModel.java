@@ -2,9 +2,10 @@ package com.candysrouse.Model;
 
 public class detalleCompraModel {
 
-    private int idDetalleCompra;
-    private int idMateriaPrima;
-    private int cantidad;
+
+    int idDetalleCompra;
+    int idMateriaPrima;
+    int cantidad;
 
     public detalleCompraModel() {
     }
@@ -15,8 +16,16 @@ public class detalleCompraModel {
         this.cantidad = cantidad;
     }
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
     public int getIdDetalleCompra() {
-        return this.idDetalleCompra;
+        return idDetalleCompra;
     }
 
     public void setIdDetalleCompra(int idDetalleCompra) {
@@ -24,19 +33,10 @@ public class detalleCompraModel {
     }
 
     public int getIdMateriaPrima() {
-        return this.idMateriaPrima;
+        return idMateriaPrima;
     }
 
     public void setIdMateriaPrima(int idMateriaPrima) {
         this.idMateriaPrima = idMateriaPrima;
     }
-
-    public int getCantidad() {
-        return this.cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
 }

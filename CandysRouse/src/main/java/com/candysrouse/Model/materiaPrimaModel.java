@@ -2,14 +2,11 @@ package com.candysrouse.Model;
 
 public class materiaPrimaModel {
 
-    private int idMateriaPrima;
-    private String nombre;
-    private int medida;
-    private int cantidad;
-    private int costo;
-
-    public materiaPrimaModel() {
-    }
+    int idMateriaPrima;
+    String nombre;
+    int medida;
+    int cantidad;
+    int costo;
 
     public materiaPrimaModel(int idMateriaPrima, String nombre, int medida, int cantidad, int costo) {
         this.idMateriaPrima = idMateriaPrima;
@@ -17,6 +14,9 @@ public class materiaPrimaModel {
         this.medida = medida;
         this.cantidad = cantidad;
         this.costo = costo;
+    }
+
+    public materiaPrimaModel() {
     }
 
     public int getIdMateriaPrima() {
@@ -59,4 +59,6 @@ public class materiaPrimaModel {
         this.costo = costo;
     }
 
+    
+        
 }

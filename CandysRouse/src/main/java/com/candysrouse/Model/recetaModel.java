@@ -2,8 +2,8 @@ package com.candysrouse.Model;
 
 public class recetaModel {
 
-    private int idReceta;
-    private String nombreReceta;
+    int idReceta;
+    String nombreReceta;
 
     public recetaModel(int idReceta, String nombreReceta) {
         this.idReceta = idReceta;
@@ -14,7 +14,7 @@ public class recetaModel {
     }
 
     public int getIdReceta() {
-        return idReceta;
+        return this.idReceta;
     }
 
     public void setIdReceta(int idReceta) {
@@ -22,10 +22,13 @@ public class recetaModel {
     }
 
     public String getNombreReceta() {
-        return nombreReceta;
+        return this.nombreReceta;
     }
 
     public void setNombreReceta(String nombreReceta) {
         this.nombreReceta = nombreReceta;
     }
+
+
+    
 }

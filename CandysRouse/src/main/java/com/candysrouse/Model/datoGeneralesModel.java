@@ -2,17 +2,17 @@ package com.candysrouse.Model;
 
 public class datoGeneralesModel {
 
-    int idDatosGenerales;
-    int dpi;
-    int nit;
-    String correo;
-    String nombre;
-    String apellido;
-    String direccion;
-    String telefono;
-    String fechaRegistro;
-    int registroActivo;
-    int idTipoPersona;
+    private int idDatosGenerales;
+    private int dpi;
+    private int nit;
+    private String correo;
+    private String nombre;
+    private String apellido;
+    private String direccion;
+    private String telefono;
+    private String fechaRegistro;
+    private int registroActivo;
+    private int idTipoPersona;
 
     public datoGeneralesModel(int idDatosGenerales, int dpi, int nit, String correo, String nombre, String apellido, String direccion, String telefono, String fechaRegistro, int registroActivo, int idTipoPersona) {
         this.idDatosGenerales = idDatosGenerales;
@@ -29,7 +29,6 @@ public class datoGeneralesModel {
     }
 
     public datoGeneralesModel() {
-
     }
 
     public int getIdDatosGenerales() {
@@ -119,5 +118,8 @@ public class datoGeneralesModel {
     public void setIdTipoPersona(int idTipoPersona) {
         this.idTipoPersona = idTipoPersona;
     }
+
+    
+
 
 }

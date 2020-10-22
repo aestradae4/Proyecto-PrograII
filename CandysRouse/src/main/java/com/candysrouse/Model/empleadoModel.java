@@ -24,14 +24,15 @@ public class empleadoModel {
 
     public empleadoModel() {
     }
-    
-    public int getIdEmpleado(){
+
+    public int getIdEmpleado() {
         return this.idEmpleado;
     }
-    
-    public void setIdEmpleado(int idEmpleado){
+
+    public void setIdEmpleado(int idEmpleado) {
         this.idEmpleado = idEmpleado;
     }
+
     public String getUsuario() {
         return this.usuario;
     }
@@ -79,4 +80,7 @@ public class empleadoModel {
     public void setIdTipoRol(int idTipoRol) {
         this.idTipoRol = idTipoRol;
     }
+    
+    
+
 }

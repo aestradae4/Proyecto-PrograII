@@ -17,6 +17,14 @@ public class comprasModel {
         this.idFormaPago = idFormaPago;
     }
 
+    public int getIdFormaPago() {
+        return this.idFormaPago;
+    }
+
+    public void setIdFormaPago(int idFormaPago) {
+        this.idFormaPago = idFormaPago;
+    }
+
     public int getIdCompra() {
         return this.idCompra;
     }
@@ -41,12 +49,5 @@ public class comprasModel {
         this.fecha = fecha;
     }
 
-    public int getIdFormaPago() {
-        return this.idFormaPago;
-    }
-
-    public void setIdFormaPago(int idFormaPago) {
-        this.idFormaPago = idFormaPago;
-    }
-
+    
 }

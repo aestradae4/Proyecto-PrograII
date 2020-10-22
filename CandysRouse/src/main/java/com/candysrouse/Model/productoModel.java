@@ -68,5 +68,5 @@ public class productoModel {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-
+    
 }
