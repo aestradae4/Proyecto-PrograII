@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.candysrouse.Model;
 
 public class proveedorModel {

@@ -1,6 +1,7 @@
 package com.candysrouse.Model;
 
 public class detalleCompraModel {
+<<<<<<< HEAD
 
 
     int idDetalleCompra;
@@ -28,10 +29,16 @@ public class detalleCompraModel {
         return idDetalleCompra;
     }
 
+    public int getIdDetalleCompra() {
+        return idDetalleCompra;
+>>>>>>> APIs
+    }
+
     public void setIdDetalleCompra(int idDetalleCompra) {
         this.idDetalleCompra = idDetalleCompra;
     }
 
+<<<<<<< HEAD
     public int getIdMateriaPrima() {
         return idMateriaPrima;
     }

@@ -10,9 +10,12 @@ public class recetaModel {
         this.nombreReceta = nombreReceta;
     }
 
+<<<<<<< HEAD
     public recetaModel() {
     }
 
+=======
+>>>>>>> APIs
     public int getIdReceta() {
         return this.idReceta;
     }

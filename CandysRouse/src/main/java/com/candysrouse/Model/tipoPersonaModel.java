@@ -9,10 +9,13 @@ public class tipoPersonaModel {
         this.nombre = nombre;
     }
 
+<<<<<<< HEAD
     public tipoPersonaModel() {
 
     }
 
+=======
+>>>>>>> APIs
     public String getNombre() {
         return nombre;
     }

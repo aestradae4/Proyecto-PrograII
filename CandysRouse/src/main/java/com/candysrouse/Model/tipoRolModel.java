@@ -1,6 +1,7 @@
 package com.candysrouse.Model;
 
 public class tipoRolModel {
+<<<<<<< HEAD
 
     int idTipoRol;
     String descripcionPuesto;
