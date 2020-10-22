@@ -8,7 +8,7 @@ public class detalleTipoRolModel {
     boolean lectura;
     boolean actualizacion;
     boolean eliminacion;
-
+//Este es el contructor de TipoRol
     public detalleTipoRolModel(int idDetalleTipoRol, int idTipoRol, boolean acceso, boolean lectura, boolean actualizacion, boolean eliminacion) {
         this.idDetalleTipoRol = idDetalleTipoRol;
         this.idTipoRol = idTipoRol;
