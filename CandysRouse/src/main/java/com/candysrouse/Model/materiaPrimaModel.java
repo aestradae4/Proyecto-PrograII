@@ -2,46 +2,49 @@ package com.candysrouse.Model;
 
 public class materiaPrimaModel {
 
-    private int idReceta;
+    private int idMateriaPrima;
     private String nombre;
-    private String medida;
+    private int medida;
     private int cantidad;
     private int costo;
 
-    public materiaPrimaModel(int idReceta, String nombre, String medida, int cantidad, int costo) {
-        this.idReceta = idReceta;
+    public materiaPrimaModel() {
+    }
+
+    public materiaPrimaModel(int idMateriaPrima, String nombre, int medida, int cantidad, int costo) {
+        this.idMateriaPrima = idMateriaPrima;
         this.nombre = nombre;
         this.medida = medida;
         this.cantidad = cantidad;
         this.costo = costo;
     }
 
-    public int getIdReceta() {
-        return idReceta;
+    public int getIdMateriaPrima() {
+        return this.idMateriaPrima;
     }
 
-    public void setIdReceta(int idReceta) {
-        this.idReceta = idReceta;
+    public void setIdMateriaPrima(int idMateriaPrima) {
+        this.idMateriaPrima = idMateriaPrima;
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getMedida() {
-        return medida;
+    public int getMedida() {
+        return this.medida;
     }
 
-    public void setMedida(String medida) {
+    public void setMedida(int medida) {
         this.medida = medida;
     }
 
     public int getCantidad() {
-        return cantidad;
+        return this.cantidad;
     }
 
     public void setCantidad(int cantidad) {
@@ -49,23 +52,11 @@ public class materiaPrimaModel {
     }
 
     public int getCosto() {
-        return costo;
+        return this.costo;
     }
 
     public void setCosto(int costo) {
         this.costo = costo;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("materiaPrimaModel{idReceta=").append(idReceta);
-        sb.append(", nombre=").append(nombre);
-        sb.append(", medida=").append(medida);
-        sb.append(", cantidad=").append(cantidad);
-        sb.append(", costo=").append(costo);
-        sb.append('}');
-        return sb.toString();
     }
 
 }

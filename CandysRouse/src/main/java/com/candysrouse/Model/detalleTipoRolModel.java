@@ -1,24 +1,27 @@
 package com.candysrouse.Model;
 
 public class detalleTipoRolModel {
-    private int idTipoRol; 
-    private boolean acceso = true;
-    private boolean lectura = true;
-    private boolean actualizacion = true;
-    private boolean eliminacion = true;
-    private modulosModel moduloModel; 
-    private tipoRolModel tipoRol; 
 
-    public detalleTipoRolModel(int idTipoRol, boolean acceso, boolean lectura, boolean actualizacion, boolean eliminacion, modulosModel moduloModel, tipoRolModel tipoRol) {
-        this.idTipoRol = idTipoRol; 
+    private int idTipoRol;
+    private boolean acceso;
+    private boolean lectura;
+    private boolean actualizacion;
+    private boolean eliminacion;
+
+    public detalleTipoRolModel(int idTipoRol, boolean acceso, boolean lectura, boolean actualizacion, boolean eliminacion) {
+        this.idTipoRol = idTipoRol;
         this.acceso = acceso;
         this.lectura = lectura;
         this.actualizacion = actualizacion;
         this.eliminacion = eliminacion;
     }
 
+    public detalleTipoRolModel() {
+
+    }
+
     public int getIdTipoRol() {
-        return idTipoRol;
+        return this.idTipoRol;
     }
 
     public void setIdTipoRol(int idTipoRol) {
@@ -26,7 +29,7 @@ public class detalleTipoRolModel {
     }
 
     public boolean isAcceso() {
-        return acceso;
+        return this.acceso;
     }
 
     public void setAcceso(boolean acceso) {
@@ -34,7 +37,7 @@ public class detalleTipoRolModel {
     }
 
     public boolean isLectura() {
-        return lectura;
+        return this.lectura;
     }
 
     public void setLectura(boolean lectura) {
@@ -42,7 +45,7 @@ public class detalleTipoRolModel {
     }
 
     public boolean isActualizacion() {
-        return actualizacion;
+        return this.actualizacion;
     }
 
     public void setActualizacion(boolean actualizacion) {
@@ -50,42 +53,10 @@ public class detalleTipoRolModel {
     }
 
     public boolean isEliminacion() {
-        return eliminacion;
+        return this.eliminacion;
     }
 
     public void setEliminacion(boolean eliminacion) {
         this.eliminacion = eliminacion;
     }
-
-    public modulosModel getModuloModel() {
-        return moduloModel;
-    }
-
-    public void setModuloModel(modulosModel moduloModel) {
-        this.moduloModel = moduloModel;
-    }
-
-    public tipoRolModel getTipoRol() {
-        return tipoRol;
-    }
-
-    public void setTipoRol(tipoRolModel tipoRol) {
-        this.tipoRol = tipoRol;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("detalleTipoRolModel{idTipoRol=").append(idTipoRol);
-        sb.append(", acceso=").append(acceso);
-        sb.append(", lectura=").append(lectura);
-        sb.append(", actualizacion=").append(actualizacion);
-        sb.append(", eliminacion=").append(eliminacion);
-        sb.append(", moduloModel=").append(moduloModel);
-        sb.append(", tipoRol=").append(tipoRol);
-        sb.append('}');
-        return sb.toString();
-    }
-    
-
 }

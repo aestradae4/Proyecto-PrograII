@@ -1,38 +1,32 @@
-
 package com.candysrouse.Model;
 
-
 public class formaPagoModel {
-    private int idformaPago;
-    private String formaPago; 
 
-    public formaPagoModel(int idformaPago, String formaPago) {
-        this.idformaPago = idformaPago;
-        this.formaPago = formaPago;
+    private int idFormaPago;
+    private String tipoPago;
+
+    public formaPagoModel(int idFormaPago, String tipoPago) {
+        this.idFormaPago = idFormaPago;
+        this.tipoPago = tipoPago;
     }
 
-    public int getIdformaPago() {
-        return idformaPago;
+    public formaPagoModel() {
     }
 
-    public void setIdformaPago(int idformaPago) {
-        this.idformaPago = idformaPago;
+    public int getIdFormaPago() {
+        return this.idFormaPago;
     }
 
-    public String getFormaPago() {
-        return formaPago;
+    public void setIdFormaPago(int idFormaPago) {
+        this.idFormaPago = idFormaPago;
     }
 
-    public void setFormaPago(String formaPago) {
-        this.formaPago = formaPago;
+    public String getTipoPago() {
+        return this.tipoPago;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("formaPagoModel{idformaPago=").append(idformaPago);
-        sb.append(", formaPago=").append(formaPago);
-        sb.append('}');
-        return sb.toString();
-    }    
+    public void setTipoPago(String tipoPago) {
+        this.tipoPago = tipoPago;
+    }
+
 }

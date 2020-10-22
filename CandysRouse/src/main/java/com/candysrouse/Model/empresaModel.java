@@ -1,23 +1,27 @@
 package com.candysrouse.Model;
 
-public class empresaModel extends datoGeneralesModel{
-    private int idEmpresa; 
-    private int nitEmpresa;
-    private int telefonoEmpresa; 
-    private String direccionEmpresa;
-    private String razonSocialEmpresa; 
+public class empresaModel {
 
-    public empresaModel(int idEmpresa, int nitEmpresa, int telefonoEmpresa, String direccionEmpresa, String razonSocialEmpresa, int idDatosGenerales, int dpi, int nit, String correo, String nombreg, String apellido, String direccion, int telefono, String fechaRegistro, int idTipoPersona, String nombre, boolean credito) {
-        super(idDatosGenerales, dpi, nit, correo, nombreg, apellido, direccion, telefono, fechaRegistro, idTipoPersona, nombre, credito);
+    private int idEmpresa;
+    private int nitEmpresa;
+    private int telefonoEmpresa;
+    private String direccionEmpresa;
+    private int idDatosGenerales;
+
+    public empresaModel(int idEmpresa, int nitEmpresa, int telefonoEmpresa, String direccionEmpresa, int idDatosGenerales) {
         this.idEmpresa = idEmpresa;
         this.nitEmpresa = nitEmpresa;
         this.telefonoEmpresa = telefonoEmpresa;
         this.direccionEmpresa = direccionEmpresa;
-        this.razonSocialEmpresa = razonSocialEmpresa;
+        this.idDatosGenerales = idDatosGenerales;
+    }
+
+    public empresaModel() {
+
     }
 
     public int getIdEmpresa() {
-        return idEmpresa;
+        return this.idEmpresa;
     }
 
     public void setIdEmpresa(int idEmpresa) {
@@ -25,7 +29,7 @@ public class empresaModel extends datoGeneralesModel{
     }
 
     public int getNitEmpresa() {
-        return nitEmpresa;
+        return this.nitEmpresa;
     }
 
     public void setNitEmpresa(int nitEmpresa) {
@@ -41,31 +45,18 @@ public class empresaModel extends datoGeneralesModel{
     }
 
     public String getDireccionEmpresa() {
-        return direccionEmpresa;
+        return this.direccionEmpresa;
     }
 
     public void setDireccionEmpresa(String direccionEmpresa) {
         this.direccionEmpresa = direccionEmpresa;
     }
 
-    public String getRazonSocialEmpresa() {
-        return razonSocialEmpresa;
+    public void setidDatosGenerales(int idDatosGenerales) {
+        this.idDatosGenerales = idDatosGenerales;
     }
 
-    public void setRazonSocialEmpresa(String razonSocialEmpresa) {
-        this.razonSocialEmpresa = razonSocialEmpresa;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("empresaModel{idEmpresa=").append(idEmpresa);
-        sb.append(", nitEmpresa=").append(nitEmpresa);
-        sb.append(", telefonoEmpresa=").append(telefonoEmpresa);
-        sb.append(", direccionEmpresa=").append(direccionEmpresa);
-        sb.append(", razonSocialEmpresa=").append(razonSocialEmpresa);
-        sb.append("").append(super.toString());
-        sb.append('}');
-        return sb.toString();
+    public int getidDatosGerenales() {
+        return this.idDatosGenerales;
     }
 }

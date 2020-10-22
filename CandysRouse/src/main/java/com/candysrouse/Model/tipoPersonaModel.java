@@ -9,6 +9,10 @@ public class tipoPersonaModel {
         this.nombre = nombre;
     }
 
+    public tipoPersonaModel() {
+
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -24,14 +28,4 @@ public class tipoPersonaModel {
     public void setIdTipoPersona(int idTipoPersona) {
         this.idTipoPersona = idTipoPersona;
     }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("tipoPersonaModel{idTipoPersona=").append(idTipoPersona);
-        sb.append(", nombre=").append(nombre);
-        sb.append('}');
-        return sb.toString();
-    }
-
 }

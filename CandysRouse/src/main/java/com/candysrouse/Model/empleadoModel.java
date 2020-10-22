@@ -2,81 +2,81 @@ package com.candysrouse.Model;
 
 public class empleadoModel {
 
-    private int idEmpleado;
-    private String usuario;
-    private String password;
-    private double sueldo;
-    private String tipoContrato;
-    private tipoRolModel tipoRol;
+     int idEmpleado;
+     String usuario;
+     String pass;
+     float sueldo;
+     String tipoDeContrato;
+     int idDatosGenerales;
+     int idTipoRol;
+     
+   
 
-    public empleadoModel(int idEmpleado, String usuario, String password, double sueldo, String tipoContrato, tipoRolModel tipoRol) {
+    public empleadoModel(int idEmpleado, String usuario, String pass, float sueldo, String tipoDeContrato, int idDatosGenerales, int idTipoRol) {
         this.idEmpleado = idEmpleado;
         this.usuario = usuario;
-        this.password = password;
+        this.pass = pass;
         this.sueldo = sueldo;
-        this.tipoContrato = tipoContrato;
-        this.tipoRol = tipoRol;
+        this.tipoDeContrato = tipoDeContrato;
+        this.idDatosGenerales = idDatosGenerales;
+        this.idTipoRol = idTipoRol;
     }
 
-    public int getIdEmpleado() {
-        return idEmpleado;
+    public empleadoModel() {
     }
-
-    public void setIdEmpleado(int idEmpleado) {
+    
+    public int getIdEmpleado(){
+        return this.idEmpleado;
+    }
+    
+    public void setIdEmpleado(int idEmpleado){
         this.idEmpleado = idEmpleado;
     }
-
     public String getUsuario() {
-        return usuario;
+        return this.usuario;
     }
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPass() {
+        return this.pass;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
-    public double getSueldo() {
-        return sueldo;
+    public float getSueldo() {
+        return this.sueldo;
     }
 
-    public void setSueldo(double sueldo) {
+    public void setSueldo(float sueldo) {
         this.sueldo = sueldo;
     }
 
-    public String getTipoContrato() {
-        return tipoContrato;
+    public String getTipoDeContrato() {
+        return this.tipoDeContrato;
     }
 
-    public void setTipoContrato(String tipoContrato) {
-        this.tipoContrato = tipoContrato;
+    public void setTipoDeContrato(String tipoDeContrato) {
+        this.tipoDeContrato = tipoDeContrato;
     }
 
-    public tipoRolModel getTipoRol() {
-        return tipoRol;
+    public int getIdDatosGenerales() {
+        return this.idDatosGenerales;
     }
 
-    public void setTipoRol(tipoRolModel tipoRol) {
-        this.tipoRol = tipoRol;
+    public void setIdDatosGenerales(int idDatosGenerales) {
+        this.idDatosGenerales = idDatosGenerales;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("empleadoModel{idEmpleado=").append(idEmpleado);
-        sb.append(", usuario=").append(usuario);
-        sb.append(", password=").append(password);
-        sb.append(", sueldo=").append(sueldo);
-        sb.append(", tipoContrato=").append(tipoContrato);
-        sb.append(", tipoRol=").append(tipoRol);
-        sb.append('}');
-        return sb.toString();
+    public int getIdTipoRol() {
+        return this.idTipoRol;
     }
 
+    public void setIdTipoRol(int idTipoRol) {
+        this.idTipoRol = idTipoRol;
+    }
 }
