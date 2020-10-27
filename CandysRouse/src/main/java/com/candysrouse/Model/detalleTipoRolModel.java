@@ -4,21 +4,24 @@ public class detalleTipoRolModel {
     //Variables de datos 
     int idDetalleTipoRol;
     int idTipoRol;
+    int idModulo;
     boolean acceso;
     boolean lectura;
     boolean actualizacion;
     boolean eliminacion;
 //Este es el contructor de TipoRol
-    public detalleTipoRolModel(int idDetalleTipoRol, int idTipoRol, boolean acceso, boolean lectura, boolean actualizacion, boolean eliminacion) {
+
+    public detalleTipoRolModel() {
+    }
+
+    public detalleTipoRolModel(int idDetalleTipoRol, int idTipoRol, int idModulo, boolean acceso, boolean lectura, boolean actualizacion, boolean eliminacion) {
         this.idDetalleTipoRol = idDetalleTipoRol;
         this.idTipoRol = idTipoRol;
+        this.idModulo = idModulo;
         this.acceso = acceso;
         this.lectura = lectura;
         this.actualizacion = actualizacion;
         this.eliminacion = eliminacion;
-    }
-
-    public detalleTipoRolModel() {
     }
 
     public int getIdDetalleTipoRol() {
@@ -35,6 +38,14 @@ public class detalleTipoRolModel {
 
     public void setIdTipoRol(int idTipoRol) {
         this.idTipoRol = idTipoRol;
+    }
+
+    public int getIdModulo() {
+        return this.idModulo;
+    }
+
+    public void setIdModulo(int idModulo) {
+        this.idModulo = idModulo;
     }
 
     public boolean isAcceso() {
@@ -68,5 +79,5 @@ public class detalleTipoRolModel {
     public void setEliminacion(boolean eliminacion) {
         this.eliminacion = eliminacion;
     }
-
+    
 }
