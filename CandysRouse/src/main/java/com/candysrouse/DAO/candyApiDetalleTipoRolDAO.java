@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author María de los Angeles Carranza Del Cid
  */
-public class candyApidetalleTipoRolDAO {
+public class candyApiDetalleTipoRolDAO {
     //Variable de conexión
 
     Connection connection;
@@ -46,7 +46,7 @@ public class candyApidetalleTipoRolDAO {
     String UPDATE = "UPDATE gearsgtc_java_panaderia.tbldetalleTipoRol SET idTipoRol = ?, idModulo = ?, acceso = ?, lectura = ?, actualizacion = ?, eliminacion = ?  WHERE idDetalleTipoRol = ?";
 
     //Definicion de metodos CRUD
-    public boolean agregar(detalleTipoRolModel objTable) {
+    public boolean agregarDAO(detalleTipoRolModel objTable) {
         try {
             //Obtenermos la conexio de la tabla
             connection = con.getConnection();
@@ -74,7 +74,7 @@ public class candyApidetalleTipoRolDAO {
     }
 
     //Obtener todos los registros 
-    public List<detalleTipoRolModel> obtenerTodos() {
+    public List<detalleTipoRolModel> obtenerTodosDAO() {
         //Creamos la lista del tipo de objeto correspondiente que almacena los registros
         List<detalleTipoRolModel> listaTodos = new ArrayList<detalleTipoRolModel>();
 
@@ -114,7 +114,7 @@ public class candyApidetalleTipoRolDAO {
     }
 
     //Obtener un registro en especifico mediante su ID
-    public detalleTipoRolModel obtenerRegistro(int idDetalleTipoRol) {
+    public detalleTipoRolModel obtenerRegistroDAO(int idDetalleTipoRol) {
 
         //Creacion de nuestro objeto 
         detalleTipoRolModel objModel;
@@ -149,7 +149,7 @@ public class candyApidetalleTipoRolDAO {
     }
 
     //Metodo publico para eliminar un Registro
-    public boolean eliminar(int idDetalleTipoRol) {
+    public boolean eliminarDAO(int idDetalleTipoRol) {
         try {
             String sql = DELETE + Integer.toString(idDetalleTipoRol);
             connection = con.getConnection();
@@ -165,7 +165,7 @@ public class candyApidetalleTipoRolDAO {
     }
 
     //Metodo publico para actualizar un Registro 
-    public boolean actualizar(detalleTipoRolModel objTable) {
+    public boolean actualizarDAO(detalleTipoRolModel objTable) {
         try {
             //Obtenermos la conexion
             connection = con.getConnection();
