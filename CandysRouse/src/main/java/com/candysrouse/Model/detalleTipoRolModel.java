@@ -5,16 +5,16 @@ public class detalleTipoRolModel {
     int idDetalleTipoRol;
     int idTipoRol;
     int idModulo;
-    boolean acceso;
-    boolean lectura;
-    boolean actualizacion;
-    boolean eliminacion;
+    int acceso;
+    int lectura;
+    int actualizacion;
+    int eliminacion;
 //Este es el contructor de TipoRol
 
     public detalleTipoRolModel() {
     }
 
-    public detalleTipoRolModel(int idDetalleTipoRol, int idTipoRol, int idModulo, boolean acceso, boolean lectura, boolean actualizacion, boolean eliminacion) {
+    public detalleTipoRolModel(int idDetalleTipoRol, int idTipoRol, int idModulo, int acceso, int lectura, int actualizacion, int eliminacion) {
         this.idDetalleTipoRol = idDetalleTipoRol;
         this.idTipoRol = idTipoRol;
         this.idModulo = idModulo;
@@ -48,35 +48,35 @@ public class detalleTipoRolModel {
         this.idModulo = idModulo;
     }
 
-    public boolean isAcceso() {
+    public int getAcceso() {
         return this.acceso;
     }
 
-    public void setAcceso(boolean acceso) {
+    public void setAcceso(int acceso) {
         this.acceso = acceso;
     }
 
-    public boolean isLectura() {
+    public int getLectura() {
         return this.lectura;
     }
 
-    public void setLectura(boolean lectura) {
+    public void setLectura(int lectura) {
         this.lectura = lectura;
     }
 
-    public boolean isActualizacion() {
+    public int getActualizacion() {
         return this.actualizacion;
     }
 
-    public void setActualizacion(boolean actualizacion) {
+    public void setActualizacion(int actualizacion) {
         this.actualizacion = actualizacion;
     }
 
-    public boolean isEliminacion() {
+    public int getEliminacion() {
         return this.eliminacion;
     }
 
-    public void setEliminacion(boolean eliminacion) {
+    public void setEliminacion(int eliminacion) {
         this.eliminacion = eliminacion;
     }
     

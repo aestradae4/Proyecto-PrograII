@@ -1,7 +1,8 @@
 package com.candysrouse.API;
 
-import com.candysrouse.DAO.candyApiUsuariosDAO;
-import com.candysrouse.Model.empleadoModel;
+//Mapeo URL DE API
+import com.candysrouse.DAO.candyApiProveedorDAO;
+import com.candysrouse.Model.proveedorModel;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,14 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-//Mapeo URL DE API
-@Path("/empleados")
+@Path("/proveedor")
 //Se va a consumir consultas JSON
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class candyApiEmpleadoAPI {
-
+public class candyApiProveedorAPI {
+    
     //Inicializar el objeto
-    candyApiUsuariosDAO empleadoDAO = new candyApiUsuariosDAO();
+    candyApiProveedorDAO proDAO = new candyApiProveedorDAO();
 
     //Variable de resultados
     boolean res;
@@ -34,8 +34,8 @@ public class candyApiEmpleadoAPI {
     Post: Sirve para enviar la informacion 
      */
     @POST
-    public Response agregarEmpleado(empleadoModel empleado) throws SQLException {
-        res = empleadoDAO.agregar(empleado);
+    public Response agregarProveedor(proveedorModel pro) throws SQLException {
+        res = proDAO.agregar(pro);
         if (res) {
             return Response.status(Response.Status.CREATED).build();
         } else {
@@ -48,10 +48,10 @@ public class candyApiEmpleadoAPI {
     Se utiliza para obtener la lista de objetos, segun la tabla en la base de datos
      */
     @GET
-    public List<empleadoModel> obtenerEmpleado() {
-        List<empleadoModel> listaEmpleado = new ArrayList<empleadoModel>();
-        listaEmpleado = empleadoDAO.obtenerTodos();
-        return listaEmpleado;
+    public List<proveedorModel> obtenerProveedor() {
+        List<proveedorModel> listaPro = new ArrayList<proveedorModel>();
+        listaPro = proDAO.obtenerTodos();
+        return listaPro;
     }
 
     /*
@@ -59,14 +59,14 @@ public class candyApiEmpleadoAPI {
     Se utiliza para obtener un objeto especifico segun una tabla de la base de datos
      */
     @GET
-    @Path("/{idEmpleado}")
-    public empleadoModel obtenerUnEmpleado(@PathParam("idEmpleado") int idEmpleado) {
-        empleadoModel empleado = new empleadoModel();
-        empleado = empleadoDAO.obtenerUnEmpleado(idEmpleado);
-        if (empleado != null) {
-            return empleado;
+    @Path("/{idProveedor}")
+    public proveedorModel obtenerUnProveedor(@PathParam("idProveedor") int idProveedor) {
+        proveedorModel pro = new proveedorModel();
+        pro = proDAO.obtenerUnPro(idProveedor);
+        if (pro != null) {
+            return pro;
         } else {
-            return empleado;
+            return pro;
         }
 
     }
@@ -76,9 +76,9 @@ public class candyApiEmpleadoAPI {
     Encargado de eliminar un registro en especifico de la base de datos
     */
     @DELETE
-    @Path("/{idEmpleado}")
-    public Response eliminarEmpleado(@PathParam("idEmpleado")int idEmpleado){ 
-        res = empleadoDAO.eliminar(idEmpleado); 
+    @Path("/{idProveedor}")
+    public Response eliminarProveedor(@PathParam("idProveedor")int idProveedor){ 
+        res = proDAO.eliminar(idProveedor); 
         if(res){ 
             return Response.status(200, "Registro eliminado correctamente").build();
         }else { 
@@ -91,10 +91,10 @@ public class candyApiEmpleadoAPI {
     */
    @PUT
    //@Path("/{idEmpleado}")
-   public Response actualizarEmpleado(empleadoModel empleadoActualizado) throws SQLException{
-       res = empleadoDAO.actualizar(empleadoActualizado);
+   public Response actualizarProveedor(proveedorModel proveedorActualizado) throws SQLException{
+       res = proDAO.actualizar(proveedorActualizado);
        if(res){ 
-           return Response.ok(empleadoActualizado).build(); 
+           return Response.ok(proveedorActualizado).build(); 
        }else {
            return Response.status(500, "Error al actualizar el usuario").build();
        }

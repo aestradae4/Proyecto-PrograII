@@ -30,10 +30,10 @@ public class candyApiDetalleTipoRolDAO {
     int idDetalleTipoRol;
     int idTipoRol;
     int idModulo;
-    boolean acceso;
-    boolean lectura;
-    boolean actualizacion;
-    boolean eliminacion;
+    int acceso;
+    int lectura;
+    int actualizacion;
+    int eliminacion;
 
     //Declaracion de consultas
     String INSERT = "INSERT INTO gearsgtc_java_panaderia.tbldetalleTipoRol VALUES(NULL, ?, ?, ?, ?, ?, ?)";
@@ -57,10 +57,10 @@ public class candyApiDetalleTipoRolDAO {
             
             statement.setInt(1, objTable.getIdTipoRol());
             statement.setInt(2, objTable.getIdModulo());
-            statement.setBoolean(3, objTable.isAcceso());
-            statement.setBoolean(4, objTable.isLectura());
-            statement.setBoolean(5, objTable.isActualizacion());
-            statement.setBoolean(6, objTable.isEliminacion());
+            statement.setInt(3, objTable.getAcceso());
+            statement.setInt(4, objTable.getLectura());
+            statement.setInt(5, objTable.getActualizacion());
+            statement.setInt(6, objTable.getEliminacion());
             statement.execute();
             connection.close();
 
@@ -91,10 +91,10 @@ public class candyApiDetalleTipoRolDAO {
                     idDetalleTipoRol = rs.getInt("idDetalleTipoRol");
                     idTipoRol = rs.getInt("idTipoRol");
                     idModulo = rs.getInt("idModulo");
-                    acceso = rs.getBoolean("acceso");
-                    lectura = rs.getBoolean("lectura");
-                    actualizacion = rs.getBoolean("actualizacion");
-                    eliminacion = rs.getBoolean("eliminacion");
+                    acceso = rs.getInt("acceso");
+                    lectura = rs.getInt("lectura");
+                    actualizacion = rs.getInt("actualizacion");
+                    eliminacion = rs.getInt("eliminacion");
 
                     //Creacion de objeto de detalleTipoRol
                     detalleTipoRolModel objModel = new detalleTipoRolModel(idDetalleTipoRol, idTipoRol, idModulo, acceso, lectura, actualizacion, eliminacion);
@@ -132,10 +132,10 @@ public class candyApiDetalleTipoRolDAO {
                     idDetalleTipoRol = rs.getInt("idDetalleTipoRol");
                     idTipoRol = rs.getInt("idTipoRol");
                     idModulo = rs.getInt("idModulo");
-                    acceso = rs.getBoolean("acceso");
-                    lectura = rs.getBoolean("lectura");
-                    actualizacion = rs.getBoolean("actualizacion");
-                    eliminacion = rs.getBoolean("eliminacion");
+                    acceso = rs.getInt("acceso");
+                    lectura = rs.getInt("lectura");
+                    actualizacion = rs.getInt("actualizacion");
+                    eliminacion = rs.getInt("eliminacion");
                 }
             }
 
@@ -176,10 +176,11 @@ public class candyApiDetalleTipoRolDAO {
              
             statement.setInt(1, objTable.getIdTipoRol());
             statement.setInt(2, objTable.getIdModulo());
-            statement.setBoolean(3, objTable.isAcceso());
-            statement.setBoolean(4, objTable.isLectura());
-            statement.setBoolean(5, objTable.isActualizacion());
-            statement.setBoolean(6, objTable.isEliminacion());
+            statement.setInt(3, objTable.getAcceso());
+            statement.setInt(4, objTable.getLectura());
+            statement.setInt(5, objTable.getActualizacion());
+            statement.setInt(6, objTable.getEliminacion());
+            statement.setInt(7, objTable.getIdDetalleTipoRol()); 
             statement.execute();
             connection.close();
 

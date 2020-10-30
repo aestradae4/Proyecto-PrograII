@@ -1,7 +1,8 @@
 package com.candysrouse.API;
 
-import com.candysrouse.DAO.candyApiUsuariosDAO;
-import com.candysrouse.Model.empleadoModel;
+
+import com.candysrouse.DAO.candyApiTipoPersonaDAO;
+import com.candysrouse.Model.tipoPersonaModel;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,13 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-//Mapeo URL DE API
-@Path("/empleados")
+@Path("/tipoPersona")
 //Se va a consumir consultas JSON
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class candyApiEmpleadoAPI {
-
+public class candyApiTipoPersonaAPI {
     //Inicializar el objeto
-    candyApiUsuariosDAO empleadoDAO = new candyApiUsuariosDAO();
+    candyApiTipoPersonaDAO TPDAO = new candyApiTipoPersonaDAO();
 
     //Variable de resultados
     boolean res;
@@ -34,8 +33,8 @@ public class candyApiEmpleadoAPI {
     Post: Sirve para enviar la informacion 
      */
     @POST
-    public Response agregarEmpleado(empleadoModel empleado) throws SQLException {
-        res = empleadoDAO.agregar(empleado);
+    public Response agregarTipoPer(tipoPersonaModel pro) throws SQLException {
+        res = TPDAO.agregar(pro);
         if (res) {
             return Response.status(Response.Status.CREATED).build();
         } else {
@@ -48,10 +47,10 @@ public class candyApiEmpleadoAPI {
     Se utiliza para obtener la lista de objetos, segun la tabla en la base de datos
      */
     @GET
-    public List<empleadoModel> obtenerEmpleado() {
-        List<empleadoModel> listaEmpleado = new ArrayList<empleadoModel>();
-        listaEmpleado = empleadoDAO.obtenerTodos();
-        return listaEmpleado;
+    public List<tipoPersonaModel> obtenerTipoPer() {
+        List<tipoPersonaModel> listaPro = new ArrayList<tipoPersonaModel>();
+        listaPro = TPDAO.obtenerTodos();
+        return listaPro;
     }
 
     /*
@@ -59,14 +58,14 @@ public class candyApiEmpleadoAPI {
     Se utiliza para obtener un objeto especifico segun una tabla de la base de datos
      */
     @GET
-    @Path("/{idEmpleado}")
-    public empleadoModel obtenerUnEmpleado(@PathParam("idEmpleado") int idEmpleado) {
-        empleadoModel empleado = new empleadoModel();
-        empleado = empleadoDAO.obtenerUnEmpleado(idEmpleado);
-        if (empleado != null) {
-            return empleado;
+    @Path("/{idTipoPersona}")
+    public tipoPersonaModel obtenerUnTipoPer(@PathParam("idTipoPersona") int idTipoPersona) {
+        tipoPersonaModel tipoPersona = new tipoPersonaModel();
+        tipoPersona = TPDAO.obtenerUnTipoPer(idTipoPersona);
+        if (tipoPersona != null) {
+            return tipoPersona;
         } else {
-            return empleado;
+            return tipoPersona;
         }
 
     }
@@ -76,9 +75,9 @@ public class candyApiEmpleadoAPI {
     Encargado de eliminar un registro en especifico de la base de datos
     */
     @DELETE
-    @Path("/{idEmpleado}")
-    public Response eliminarEmpleado(@PathParam("idEmpleado")int idEmpleado){ 
-        res = empleadoDAO.eliminar(idEmpleado); 
+    @Path("/{idTipoPersona}")
+    public Response eliminarTipoPer(@PathParam("idTipoPersona")int idTipoPersona){ 
+        res = TPDAO.eliminar(idTipoPersona); 
         if(res){ 
             return Response.status(200, "Registro eliminado correctamente").build();
         }else { 
@@ -91,10 +90,10 @@ public class candyApiEmpleadoAPI {
     */
    @PUT
    //@Path("/{idEmpleado}")
-   public Response actualizarEmpleado(empleadoModel empleadoActualizado) throws SQLException{
-       res = empleadoDAO.actualizar(empleadoActualizado);
+   public Response actualizarTipoPer(tipoPersonaModel tipoPersonaActualizado) throws SQLException{
+       res = TPDAO.actualizar( tipoPersonaActualizado);
        if(res){ 
-           return Response.ok(empleadoActualizado).build(); 
+           return Response.ok( tipoPersonaActualizado).build(); 
        }else {
            return Response.status(500, "Error al actualizar el usuario").build();
        }

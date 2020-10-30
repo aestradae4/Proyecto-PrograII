@@ -2,27 +2,28 @@ package com.candysrouse.Model;
 
 public class tipoPersonaModel {
 
-    private int idTipoPersona;
-    private String nombre;
+    int idTipoPersona;
+    String nombreTipoPersona;
 
-    public tipoPersonaModel(int idTipoPersona, String nombre) {
-        this.nombre = nombre;
+    public tipoPersonaModel(int idTipoPersona, String nombreTipoPersona) {
+        this.idTipoPersona = idTipoPersona; 
+        this.nombreTipoPersona = nombreTipoPersona;
     }
 
     public tipoPersonaModel() {
 
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreTipoPersona() {
+        return this.nombreTipoPersona;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreTipoPersona(String nombreTipoPersona) {
+        this.nombreTipoPersona = nombreTipoPersona;
     }
 
     public int getIdTipoPersona() {
-        return idTipoPersona;
+        return this.idTipoPersona;
     }
 
     public void setIdTipoPersona(int idTipoPersona) {

@@ -2,27 +2,19 @@ package com.candysrouse.Model;
 
 public class proveedorModel {
 
-    private int idProveedor;
-    private int idEmpresa;
-    private int diasCredito;
-    private boolean credito;
+    int idProveedor;
+    int idEmpresa;
+    int diasCredito;
+    int credito;
 
     public proveedorModel() {
 
     }
 
-    public proveedorModel(int idProveedor, int idEmpresa, int diasCredito, boolean credito) {
+    public proveedorModel(int idProveedor, int idEmpresa, int diasCredito, int credito) {
         this.idProveedor = idProveedor;
         this.idEmpresa = idEmpresa;
         this.diasCredito = diasCredito;
-        this.credito = credito;
-    }
-
-    public boolean isCredito() {
-        return this.credito;
-    }
-
-    public void setCredito(boolean credito) {
         this.credito = credito;
     }
 
@@ -50,6 +42,14 @@ public class proveedorModel {
         this.diasCredito = diasCredito;
     }
 
-  
+    public int getCredito() {
+        return this.credito;
+    }
+
+    public void setCredito(int credito) {
+        this.credito = credito;
+    }
+
+
 
 }
