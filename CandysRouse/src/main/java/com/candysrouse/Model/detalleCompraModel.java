@@ -4,16 +4,42 @@ public class detalleCompraModel {
 
 
     int idDetalleCompra;
+    int idCompra;
     int idMateriaPrima;
     int cantidad;
+
+    public detalleCompraModel(int idDetalleCompra, int idCompra, int idMateriaPrima, int cantidad) {
+        this.idDetalleCompra = idDetalleCompra;
+        this.idCompra = idCompra;
+        this.idMateriaPrima = idMateriaPrima;
+        this.cantidad = cantidad;
+    }
 
     public detalleCompraModel() {
     }
 
-    public detalleCompraModel(int idDetalleCompra, int idMateriaPrima, int cantidad) {
+    public int getIdDetalleCompra() {
+        return this.idDetalleCompra;
+    }
+
+    public void setIdDetalleCompra(int idDetalleCompra) {
         this.idDetalleCompra = idDetalleCompra;
+    }
+
+    public int getIdCompra() {
+        return this.idCompra;
+    }
+
+    public void setIdCompra(int idCompra) {
+        this.idCompra = idCompra;
+    }
+
+    public int getIdMateriaPrima() {
+        return this.idMateriaPrima;
+    }
+
+    public void setIdMateriaPrima(int idMateriaPrima) {
         this.idMateriaPrima = idMateriaPrima;
-        this.cantidad = cantidad;
     }
 
     public int getCantidad() {
@@ -24,19 +50,4 @@ public class detalleCompraModel {
         this.cantidad = cantidad;
     }
 
-    public int getIdDetalleCompra() {
-        return idDetalleCompra;
-    }
-
-    public void setIdDetalleCompra(int idDetalleCompra) {
-        this.idDetalleCompra = idDetalleCompra;
-    }
-
-    public int getIdMateriaPrima() {
-        return idMateriaPrima;
-    }
-
-    public void setIdMateriaPrima(int idMateriaPrima) {
-        this.idMateriaPrima = idMateriaPrima;
-    }
 }

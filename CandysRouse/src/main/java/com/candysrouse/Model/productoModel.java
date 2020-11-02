@@ -2,12 +2,12 @@ package com.candysrouse.Model;
 
 public class productoModel {
 
-    private int idProducto;
-    private int idReceta;
-    private String nombre;
-    private String descripcion;
-    private double existencia;
-    private double precio;
+    int idProducto;
+    int idReceta;
+    String nombre;
+    String descripcion;
+    double existencia;
+    double precio;
 
     public productoModel(int idProducto, int idReceta, String nombre, String descripcion, double existencia, double precio) {
         this.idProducto = idProducto;

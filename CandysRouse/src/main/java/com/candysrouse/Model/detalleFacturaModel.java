@@ -2,10 +2,10 @@
 package com.candysrouse.Model;
 
 public class detalleFacturaModel {
-    private int idDetalleFactura; 
-    private int idFactura;
-    private int idProducto;
-    private int cantidad;
+    int idDetalleFactura; 
+    int idFactura;
+    int idProducto;
+    int cantidad;
 
     public detalleFacturaModel() {
     }

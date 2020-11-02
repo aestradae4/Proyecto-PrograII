@@ -2,7 +2,7 @@
 package com.candysrouse.DAO;
 
 import com.candysrouse.Conexion.Conexion;
-import com.candysrouse.Model.detalleTipoRolModel;
+import com.candysrouse.Model.comprasModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  *
- * @author María de los Angeles Carranza Del Cid
+ * @author María de los Angeles Carranza Del Cid.
  */
-public class candyApiDetalleTipoRolDAO {
+public class candyApiComprasDAO {
     //Variable de conexión
 
     Connection connection;
@@ -27,26 +27,24 @@ public class candyApiDetalleTipoRolDAO {
 
     //Declaracion de variables de objeto 
     //Variables de datos 
-    int idDetalleTipoRol;
-    int idTipoRol;
-    int idModulo;
-    int acceso;
-    int lectura;
-    int actualizacion;
-    int eliminacion;
+    int idCompra;
+    String fecha;
+    int idFormaPago;
+    int idProveedor;
+    
 
     //Declaracion de consultas
-    String INSERT = "INSERT INTO gearsgtc_java_panaderia.tblDetalleTipoRol VALUES(NULL, ?, ?, ?, ?, ?, ?)";
+    String INSERT = "INSERT INTO gearsgtc_java_panaderia.tblCompra VALUES(NULL, ?, ?, ?)";
     //Consulta SELECT para obtener todos los registros
-    String SELECT = "SELECT * FROM gearsgtc_java_panaderia.tblDetalleTipoRol";
-    String selectById = "SELECT * FROM gearsgtc_java_panaderia.tblDetalleTipoRol where idDetalleTipoRol = ";
+    String SELECT = "SELECT * FROM gearsgtc_java_panaderia.tblCompra";
+    String selectById = "SELECT * FROM gearsgtc_java_panaderia.tblCompra where idCompra = ";
     //Consulta DELETE para eliminar un registro en especifico de la DB
-    String DELETE = "DELETE FROM gearsgtc_java_panaderia.tblDetalleTipoRol where idDetalleTipoRol = ";
+    String DELETE = "DELETE FROM gearsgtc_java_panaderia.tblCompra where idCompra = ";
     //Consulta UPDATE para actualizar datos de un registro en especifico
-    String UPDATE = "UPDATE gearsgtc_java_panaderia.tblDetalleTipoRol SET idTipoRol = ?, idModulo = ?, acceso = ?, lectura = ?, actualizacion = ?, eliminacion = ?  WHERE idDetalleTipoRol = ?";
+    String UPDATE = "UPDATE gearsgtc_java_panaderia.tblCompra SET fecha = ?, idFormaPago = ?, idProveedor = ?  WHERE idCompra = ?";
 
     //Definicion de metodos CRUD
-    public boolean agregarDAO(detalleTipoRolModel objTable) {
+    public boolean agregarDAO(comprasModel objTable) {
         try {
             //Obtenermos la conexio de la tabla
             connection = con.getConnection();
@@ -55,12 +53,9 @@ public class candyApiDetalleTipoRolDAO {
 
             //Asignamos los valores a los campos de la consulta sql 
             
-            statement.setInt(1, objTable.getIdTipoRol());
-            statement.setInt(2, objTable.getIdModulo());
-            statement.setInt(3, objTable.getAcceso());
-            statement.setInt(4, objTable.getLectura());
-            statement.setInt(5, objTable.getActualizacion());
-            statement.setInt(6, objTable.getEliminacion());
+            statement.setString(1, objTable.getFecha());
+            statement.setInt(2, objTable.getIdFormaPago());
+            statement.setInt(3, objTable.getIdProveedor());
             statement.execute();
             connection.close();
 
@@ -74,9 +69,9 @@ public class candyApiDetalleTipoRolDAO {
     }
 
     //Obtener todos los registros 
-    public List<detalleTipoRolModel> obtenerTodosDAO() {
+    public List<comprasModel> obtenerTodosDAO() {
         //Creamos la lista del tipo de objeto correspondiente que almacena los registros
-        List<detalleTipoRolModel> listaTodos = new ArrayList<detalleTipoRolModel>();
+        List<comprasModel> listaTodos = new ArrayList<comprasModel>();
 
         try {
             String sql = SELECT;
@@ -88,16 +83,13 @@ public class candyApiDetalleTipoRolDAO {
 
             if (res) {
                 while (rs.next()) {
-                    idDetalleTipoRol = rs.getInt("idDetalleTipoRol");
-                    idTipoRol = rs.getInt("idTipoRol");
-                    idModulo = rs.getInt("idModulo");
-                    acceso = rs.getInt("acceso");
-                    lectura = rs.getInt("lectura");
-                    actualizacion = rs.getInt("actualizacion");
-                    eliminacion = rs.getInt("eliminacion");
+                    idCompra = rs.getInt("idCompra");
+                    fecha = rs.getString("fecha");
+                    idFormaPago = rs.getInt("idFormaPago");
+                    idProveedor = rs.getInt("idProveedor");
 
-                    //Creacion de objeto de detalleTipoRol
-                    detalleTipoRolModel objModel = new detalleTipoRolModel(idDetalleTipoRol, idTipoRol, idModulo, acceso, lectura, actualizacion, eliminacion);
+                    //Creacion de objeto de compras
+                    comprasModel objModel = new comprasModel(idCompra, fecha, idFormaPago,idProveedor);
                     //Agregamos el objeto a nuestra lista de objetos
                     listaTodos.add(objModel);
 
@@ -114,12 +106,12 @@ public class candyApiDetalleTipoRolDAO {
     }
 
     //Obtener un registro en especifico mediante su ID
-    public detalleTipoRolModel obtenerRegistroDAO(int idDetalleTipoRol) {
+    public comprasModel obtenerRegistroDAO(int idCompra) {
 
         //Creacion de nuestro objeto 
-        detalleTipoRolModel detalleTipoRolModel;
+        comprasModel objModel;
         try {
-            String sql = selectById + Integer.toString(idDetalleTipoRol);
+            String sql = selectById + Integer.toString(idCompra);
             connection = con.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.execute();
@@ -129,13 +121,11 @@ public class candyApiDetalleTipoRolDAO {
 
             if (res) {
                 while (rs.next()) {
-                    idDetalleTipoRol = rs.getInt("idDetalleTipoRol");
-                    idTipoRol = rs.getInt("idTipoRol");
-                    idModulo = rs.getInt("idModulo");
-                    acceso = rs.getInt("acceso");
-                    lectura = rs.getInt("lectura");
-                    actualizacion = rs.getInt("actualizacion");
-                    eliminacion = rs.getInt("eliminacion");
+                    idCompra = rs.getInt("idCompra");
+                    fecha = rs.getString("fecha");
+                    idFormaPago = rs.getInt("idFormaPago");
+                    idProveedor = rs.getInt("idProveedor");
+
                 }
             }
 
@@ -143,15 +133,15 @@ public class candyApiDetalleTipoRolDAO {
         } catch (SQLException e) {
             return null;
         }
-        //Creacion de objeto de tipo detalleTipoRolModel
-        detalleTipoRolModel detalleTipoRolByid = new detalleTipoRolModel(idDetalleTipoRol, idTipoRol, idModulo, acceso, lectura, actualizacion, eliminacion);
-        return detalleTipoRolByid;
+        //Creacion de objeto de tipo comprasModel
+        comprasModel objModelByid = new comprasModel(idCompra, fecha, idFormaPago, idProveedor);
+        return objModelByid;
     }
 
     //Metodo publico para eliminar un Registro
-    public boolean eliminarDAO(int idDetalleTipoRol) {
+    public boolean eliminarDAO(int idCompra) {
         try {
-            String sql = DELETE + Integer.toString(idDetalleTipoRol);
+            String sql = DELETE + Integer.toString(idCompra);
             connection = con.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.execute();
@@ -165,7 +155,7 @@ public class candyApiDetalleTipoRolDAO {
     }
 
     //Metodo publico para actualizar un Registro 
-    public boolean actualizarDAO(detalleTipoRolModel objTable) {
+    public boolean actualizarDAO(comprasModel objTable) {
         try {
             //Obtenermos la conexion
             connection = con.getConnection();
@@ -174,13 +164,10 @@ public class candyApiDetalleTipoRolDAO {
 
             //Asignamos los valores a los campos de la consulta sql 
              
-            statement.setInt(1, objTable.getIdTipoRol());
-            statement.setInt(2, objTable.getIdModulo());
-            statement.setInt(3, objTable.getAcceso());
-            statement.setInt(4, objTable.getLectura());
-            statement.setInt(5, objTable.getActualizacion());
-            statement.setInt(6, objTable.getEliminacion());
-            statement.setInt(7, objTable.getIdDetalleTipoRol()); 
+            statement.setString(1, objTable.getFecha());
+            statement.setInt(2, objTable.getIdFormaPago());
+            statement.setInt(3, objTable.getIdProveedor());
+            statement.setInt(4, objTable.getIdCompra());
             statement.execute();
             connection.close();
 

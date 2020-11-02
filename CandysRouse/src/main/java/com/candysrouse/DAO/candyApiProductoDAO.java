@@ -2,19 +2,20 @@
 package com.candysrouse.DAO;
 
 import com.candysrouse.Conexion.Conexion;
-import com.candysrouse.Model.detalleTipoRolModel;
+import com.candysrouse.Model.productoModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  *
  * @author María de los Angeles Carranza Del Cid
  */
-public class candyApiDetalleTipoRolDAO {
-    //Variable de conexión
+public class candyApiProductoDAO {
+   //Variable de conexión
 
     Connection connection;
     //Instanciamos nuevo objeto de tipo Conexión en base a la clase "Conexion"
@@ -27,26 +28,25 @@ public class candyApiDetalleTipoRolDAO {
 
     //Declaracion de variables de objeto 
     //Variables de datos 
-    int idDetalleTipoRol;
-    int idTipoRol;
-    int idModulo;
-    int acceso;
-    int lectura;
-    int actualizacion;
-    int eliminacion;
+    int idProducto;
+    int idReceta;
+    String nombre;
+    String descripcion;
+    double existencia;
+    double precio;
 
     //Declaracion de consultas
-    String INSERT = "INSERT INTO gearsgtc_java_panaderia.tblDetalleTipoRol VALUES(NULL, ?, ?, ?, ?, ?, ?)";
+    String INSERT = "INSERT INTO gearsgtc_java_panaderia.tblProducto VALUES(NULL, ?, ?, ?, ?, ?)";
     //Consulta SELECT para obtener todos los registros
-    String SELECT = "SELECT * FROM gearsgtc_java_panaderia.tblDetalleTipoRol";
-    String selectById = "SELECT * FROM gearsgtc_java_panaderia.tblDetalleTipoRol where idDetalleTipoRol = ";
+    String SELECT = "SELECT * FROM gearsgtc_java_panaderia.tblProducto";
+    String selectById = "SELECT * FROM gearsgtc_java_panaderia.tblProducto where idProducto = ";
     //Consulta DELETE para eliminar un registro en especifico de la DB
-    String DELETE = "DELETE FROM gearsgtc_java_panaderia.tblDetalleTipoRol where idDetalleTipoRol = ";
+    String DELETE = "DELETE FROM gearsgtc_java_panaderia.tblProducto where idProducto = ";
     //Consulta UPDATE para actualizar datos de un registro en especifico
-    String UPDATE = "UPDATE gearsgtc_java_panaderia.tblDetalleTipoRol SET idTipoRol = ?, idModulo = ?, acceso = ?, lectura = ?, actualizacion = ?, eliminacion = ?  WHERE idDetalleTipoRol = ?";
+    String UPDATE = "UPDATE gearsgtc_java_panaderia.tblProducto SET idReceta = ?, nombre = ?, descripcion = ?, existencia = ?, precio = ?  WHERE idProducto = ?";
 
     //Definicion de metodos CRUD
-    public boolean agregarDAO(detalleTipoRolModel objTable) {
+    public boolean agregarDAO(productoModel objProducto) {
         try {
             //Obtenermos la conexio de la tabla
             connection = con.getConnection();
@@ -55,12 +55,11 @@ public class candyApiDetalleTipoRolDAO {
 
             //Asignamos los valores a los campos de la consulta sql 
             
-            statement.setInt(1, objTable.getIdTipoRol());
-            statement.setInt(2, objTable.getIdModulo());
-            statement.setInt(3, objTable.getAcceso());
-            statement.setInt(4, objTable.getLectura());
-            statement.setInt(5, objTable.getActualizacion());
-            statement.setInt(6, objTable.getEliminacion());
+            statement.setInt(1, objProducto.getIdReceta());
+            statement.setString(2, objProducto.getNombre());
+            statement.setString(3, objProducto.getDescripcion());
+            statement.setDouble(4, objProducto.getExistencia());
+            statement.setDouble(5, objProducto.getPrecio());
             statement.execute();
             connection.close();
 
@@ -74,9 +73,9 @@ public class candyApiDetalleTipoRolDAO {
     }
 
     //Obtener todos los registros 
-    public List<detalleTipoRolModel> obtenerTodosDAO() {
+    public List<productoModel> obtenerTodosDAO() {
         //Creamos la lista del tipo de objeto correspondiente que almacena los registros
-        List<detalleTipoRolModel> listaTodos = new ArrayList<detalleTipoRolModel>();
+        List<productoModel> listaTodos = new ArrayList<productoModel>();
 
         try {
             String sql = SELECT;
@@ -88,18 +87,17 @@ public class candyApiDetalleTipoRolDAO {
 
             if (res) {
                 while (rs.next()) {
-                    idDetalleTipoRol = rs.getInt("idDetalleTipoRol");
-                    idTipoRol = rs.getInt("idTipoRol");
-                    idModulo = rs.getInt("idModulo");
-                    acceso = rs.getInt("acceso");
-                    lectura = rs.getInt("lectura");
-                    actualizacion = rs.getInt("actualizacion");
-                    eliminacion = rs.getInt("eliminacion");
+                    idProducto = rs.getInt("idProducto");
+                    idReceta = rs.getInt("idReceta");
+                    nombre = rs.getString("nombre");
+                    descripcion = rs.getString("descripcion");
+                    existencia = rs.getInt("existencia");
+                    precio = rs.getInt("precio");
 
-                    //Creacion de objeto de detalleTipoRol
-                    detalleTipoRolModel objModel = new detalleTipoRolModel(idDetalleTipoRol, idTipoRol, idModulo, acceso, lectura, actualizacion, eliminacion);
+                    //Creacion de objeto Producto
+                    productoModel objProductoModel = new productoModel(idProducto, idReceta, nombre, descripcion, existencia, precio);
                     //Agregamos el objeto a nuestra lista de objetos
-                    listaTodos.add(objModel);
+                    listaTodos.add(objProductoModel);
 
                 }
             }
@@ -114,12 +112,12 @@ public class candyApiDetalleTipoRolDAO {
     }
 
     //Obtener un registro en especifico mediante su ID
-    public detalleTipoRolModel obtenerRegistroDAO(int idDetalleTipoRol) {
+    public productoModel obtenerRegistroDAO(int idProducto) {
 
         //Creacion de nuestro objeto 
-        detalleTipoRolModel detalleTipoRolModel;
+        productoModel objProductoModel;
         try {
-            String sql = selectById + Integer.toString(idDetalleTipoRol);
+            String sql = selectById + Integer.toString(idProducto);
             connection = con.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.execute();
@@ -129,13 +127,12 @@ public class candyApiDetalleTipoRolDAO {
 
             if (res) {
                 while (rs.next()) {
-                    idDetalleTipoRol = rs.getInt("idDetalleTipoRol");
-                    idTipoRol = rs.getInt("idTipoRol");
-                    idModulo = rs.getInt("idModulo");
-                    acceso = rs.getInt("acceso");
-                    lectura = rs.getInt("lectura");
-                    actualizacion = rs.getInt("actualizacion");
-                    eliminacion = rs.getInt("eliminacion");
+                    idProducto = rs.getInt("idProducto");
+                    idReceta = rs.getInt("idReceta");
+                    nombre = rs.getString("nombre");
+                    descripcion = rs.getString("descripcion");
+                    existencia = rs.getInt("existencia");
+                    precio = rs.getInt("precio");
                 }
             }
 
@@ -143,15 +140,15 @@ public class candyApiDetalleTipoRolDAO {
         } catch (SQLException e) {
             return null;
         }
-        //Creacion de objeto de tipo detalleTipoRolModel
-        detalleTipoRolModel detalleTipoRolByid = new detalleTipoRolModel(idDetalleTipoRol, idTipoRol, idModulo, acceso, lectura, actualizacion, eliminacion);
-        return detalleTipoRolByid;
+        //Creacion de objeto de tipo productoModel
+        productoModel objProductoModelByid = new productoModel(idProducto, idReceta, nombre, descripcion, existencia, precio);
+        return objProductoModelByid;
     }
 
     //Metodo publico para eliminar un Registro
-    public boolean eliminarDAO(int idDetalleTipoRol) {
+    public boolean eliminarDAO(int idProducto) {
         try {
-            String sql = DELETE + Integer.toString(idDetalleTipoRol);
+            String sql = DELETE + Integer.toString(idProducto);
             connection = con.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.execute();
@@ -165,7 +162,7 @@ public class candyApiDetalleTipoRolDAO {
     }
 
     //Metodo publico para actualizar un Registro 
-    public boolean actualizarDAO(detalleTipoRolModel objTable) {
+    public boolean actualizarDAO(productoModel objProducto) {
         try {
             //Obtenermos la conexion
             connection = con.getConnection();
@@ -174,13 +171,12 @@ public class candyApiDetalleTipoRolDAO {
 
             //Asignamos los valores a los campos de la consulta sql 
              
-            statement.setInt(1, objTable.getIdTipoRol());
-            statement.setInt(2, objTable.getIdModulo());
-            statement.setInt(3, objTable.getAcceso());
-            statement.setInt(4, objTable.getLectura());
-            statement.setInt(5, objTable.getActualizacion());
-            statement.setInt(6, objTable.getEliminacion());
-            statement.setInt(7, objTable.getIdDetalleTipoRol()); 
+            statement.setInt(1, objProducto.getIdReceta());
+            statement.setString(2, objProducto.getNombre());
+            statement.setString(3, objProducto.getDescripcion());
+            statement.setDouble(4, objProducto.getExistencia());
+            statement.setDouble(5, objProducto.getPrecio());
+            statement.setInt(6, objProducto.getIdProducto());
             statement.execute();
             connection.close();
 
@@ -190,5 +186,5 @@ public class candyApiDetalleTipoRolDAO {
             res = false;
             return res;
         }
-    }
+    } 
 }

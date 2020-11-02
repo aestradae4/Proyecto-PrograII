@@ -2,27 +2,19 @@ package com.candysrouse.Model;
 
 public class comprasModel {
 
-    private int idCompra;
-    private int idProveedor;
-    private String fecha;
-    private int idFormaPago;
+    int idCompra;
+    String fecha;
+    int idFormaPago;
+    int idProveedor;
 
-    public comprasModel() {
-    }
-
-    public comprasModel(int idCompra, int idProveedor, String fecha, int idFormaPago) {
+    public comprasModel(int idCompra, String fecha, int idFormaPago, int idProveedor) {
         this.idCompra = idCompra;
-        this.idProveedor = idProveedor;
         this.fecha = fecha;
         this.idFormaPago = idFormaPago;
+        this.idProveedor = idProveedor;
     }
 
-    public int getIdFormaPago() {
-        return this.idFormaPago;
-    }
-
-    public void setIdFormaPago(int idFormaPago) {
-        this.idFormaPago = idFormaPago;
+    public comprasModel() {
     }
 
     public int getIdCompra() {
@@ -33,14 +25,6 @@ public class comprasModel {
         this.idCompra = idCompra;
     }
 
-    public int getIdProveedor() {
-        return this.idProveedor;
-    }
-
-    public void setIdProveedor(int idProveedor) {
-        this.idProveedor = idProveedor;
-    }
-
     public String getFecha() {
         return this.fecha;
     }
@@ -49,5 +33,27 @@ public class comprasModel {
         this.fecha = fecha;
     }
 
+    public int getIdFormaPago() {
+        return this.idFormaPago;
+    }
+
+    public void setIdFormaPago(int idFormaPago) {
+        this.idFormaPago = idFormaPago;
+    }
+
+    public int getIdProveedor() {
+        return this.idProveedor;
+    }
+
+    public void setIdProveedor(int idProveedor) {
+        this.idProveedor = idProveedor;
+    }
+
+    @Override
+    public String toString() {
+        return "comprasModel{" + "idCompra=" + idCompra + ", fecha=" + fecha + ", idFormaPago=" + idFormaPago + ", idProveedor=" + idProveedor + '}';
+    }
+
+    
     
 }
