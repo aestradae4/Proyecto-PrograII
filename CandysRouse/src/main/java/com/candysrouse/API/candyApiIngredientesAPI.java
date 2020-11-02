@@ -89,7 +89,6 @@ public class candyApiIngredientesAPI {
     Encargado de actualizar datos en un registro en especifico en la DB
     */
    @PUT
-   //@Path("/{idReceta}")
    public Response actualizarIngrediente(ingredientesModel ingredienteActualizado) throws SQLException{
        res = ingredienteDAO.actualizar(ingredienteActualizado);
        if(res){ 

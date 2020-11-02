@@ -5,23 +5,23 @@ public class ingredientesModel {
     int idIngredientes;
     int idReceta;
     int idMateriaPrima;
-    int cantidad;
-
+    float cantidad;
+    
     public ingredientesModel() {
     }
 
-    public ingredientesModel(int idIngredientes, int idReceta, int idMateriaPrima, int cantidad) {
+    public ingredientesModel(int idIngredientes, int idReceta, int idMateriaPrima, float cantidad) {
         this.idIngredientes = idIngredientes;
         this.idReceta = idReceta;
         this.idMateriaPrima = idMateriaPrima;
         this.cantidad = cantidad;
     }
 
-    public int getCantidad() {
+    public float getCantidad() {
         return this.cantidad;
     }
 
-    public void setCantidad(int cantidad) {
+    public void setCantidad(float cantidad) {
         this.cantidad = cantidad;
     }
 

@@ -49,11 +49,5 @@ public class comprasModel {
         this.idProveedor = idProveedor;
     }
 
-    @Override
-    public String toString() {
-        return "comprasModel{" + "idCompra=" + idCompra + ", fecha=" + fecha + ", idFormaPago=" + idFormaPago + ", idProveedor=" + idProveedor + '}';
-    }
-
-    
-    
+       
 }

@@ -25,7 +25,7 @@ public class candyApiIngredientesDAO {
     int idIngredientes;
     int idReceta;
     int idMateriaPrima;
-    int cantidad;
+    float cantidad;
     
     //Declaracion de consultas
     String INSERT = "INSERT INTO gearsgtc_java_panaderia.tblIngrediente VALUES(NULL, ?, ?, ?)";
@@ -50,7 +50,7 @@ public class candyApiIngredientesDAO {
             //statement.setInt(1, objEmpleado.getIdEmpleado()); 
             statement.setInt(1, objingredientes.getIdReceta());
             statement.setInt(2, objingredientes.getIdMateriaPrima());
-            statement.setInt(3, objingredientes.getCantidad());
+            statement.setFloat(3, objingredientes.getCantidad());
             statement.execute();
             connection.close();
 
@@ -81,7 +81,7 @@ public class candyApiIngredientesDAO {
                     idIngredientes = rs.getInt("idIngredientes");
                     idReceta = rs.getInt("idReceta");
                     idMateriaPrima = rs.getInt("idMateriaPrima");
-                    cantidad = rs.getInt("cantidad");
+                    cantidad = rs.getFloat("cantidad");
 
 
                     //Creacion de objeto de tipo Empleado
@@ -120,7 +120,7 @@ public class candyApiIngredientesDAO {
                     idIngredientes = rs.getInt("idIngredientes");
                     idReceta = rs.getInt("idReceta");
                     idMateriaPrima = rs.getInt("idMateriaPrima");
-                    cantidad = rs.getInt("cantidad");
+                    cantidad = rs.getFloat("cantidad");
 
                 }
             }
@@ -135,9 +135,9 @@ public class candyApiIngredientesDAO {
     }
 
     //Metodo publico para eliminar un usuario 
-    public boolean eliminar(int idReceta) {
+    public boolean eliminar(int idIngredientes) {
         try {
-            String sql = DELETE + Integer.toString(idReceta);
+            String sql = DELETE + Integer.toString(idIngredientes);
             connection = con.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.execute();
@@ -161,9 +161,9 @@ public class candyApiIngredientesDAO {
             //Asignamos los valores a los campos de la consulta sql 
             statement.setInt(1, objingredientes.getIdReceta());
             statement.setInt(2, objingredientes.getIdMateriaPrima());
-            statement.setInt(3, objingredientes.getCantidad());
+            statement.setFloat(3, objingredientes.getCantidad());
             statement.setInt(4, objingredientes.getIdIngredientes());
-
+            statement.execute();
             connection.close();
 
             res = true;
