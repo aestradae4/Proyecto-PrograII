@@ -6,16 +6,25 @@ public class facturaModel {
     int idDatosGenerales;
     int idEmpresa;
     String fecha;
-    double monto;
+    float monto;
 
     public facturaModel() {
     }
 
-    public facturaModel(int idFactura, int idDatosGenerales, int idEmpresa, String fecha, double monto) {
+
+    public facturaModel(int idFactura, int idDatosGenerales, int idEmpresa, String fecha, float monto) {
         this.idFactura = idFactura;
         this.idDatosGenerales = idDatosGenerales;
         this.idEmpresa = idEmpresa;
         this.fecha = fecha;
+        this.monto = monto;
+    }
+
+    public float getMonto() {
+        return this.monto;
+    }
+
+    public void setMonto(float monto) {
         this.monto = monto;
     }
 
@@ -49,14 +58,6 @@ public class facturaModel {
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
-    }
-
-    public double getMonto() {
-        return this.monto;
-    }
-
-    public void setMonto(double monto) {
-        this.monto = monto;
     }
 
     

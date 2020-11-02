@@ -4,11 +4,14 @@ public class materiaPrimaModel {
 
     int idMateriaPrima;
     String nombre;
-    int medida;
+    String medida;
     int cantidad;
     int costo;
 
-    public materiaPrimaModel(int idMateriaPrima, String nombre, int medida, int cantidad, int costo) {
+    public materiaPrimaModel() {
+    }
+
+    public materiaPrimaModel(int idMateriaPrima, String nombre, String medida, int cantidad, int costo) {
         this.idMateriaPrima = idMateriaPrima;
         this.nombre = nombre;
         this.medida = medida;
@@ -16,11 +19,16 @@ public class materiaPrimaModel {
         this.costo = costo;
     }
 
-    public materiaPrimaModel() {
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo) {
+        this.costo = costo;
     }
 
     public int getIdMateriaPrima() {
-        return this.idMateriaPrima;
+        return idMateriaPrima;
     }
 
     public void setIdMateriaPrima(int idMateriaPrima) {
@@ -28,37 +36,28 @@ public class materiaPrimaModel {
     }
 
     public String getNombre() {
-        return this.nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public int getMedida() {
-        return this.medida;
+    public String getMedida() {
+        return medida;
     }
 
-    public void setMedida(int medida) {
+    public void setMedida(String medida) {
         this.medida = medida;
     }
 
     public int getCantidad() {
-        return this.cantidad;
+        return cantidad;
     }
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
-    public int getCosto() {
-        return this.costo;
-    }
-
-    public void setCosto(int costo) {
-        this.costo = costo;
-    }
-
-    
-        
+  
 }

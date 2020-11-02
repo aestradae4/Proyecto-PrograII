@@ -2,8 +2,8 @@ package com.candysrouse.Model;
 
 public class formaPagoModel {
 
-    private int idFormaPago;
-    private String tipoPago;
+    int idFormaPago;
+    String tipoPago;
 
     public formaPagoModel(int idFormaPago, String tipoPago) {
         this.idFormaPago = idFormaPago;
