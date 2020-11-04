@@ -22,7 +22,7 @@ public class Conexion {
             dataSource.setUsername("gearsgtc_javapan");
             dataSource.setPassword("d0Ok[MQ+FCSQ");
             //Ingreso de url del servidor de DB
-            dataSource.setUrl("jdbc:mysql://dnzmakers.com:3306/gearsgtc_java_panaderia?useTimeZone=true&serverTimezone=UTC&autoReconnect=true&useSSL=false");
+            dataSource.setUrl("jdbc:mysql://godevs.dnzmakers.com:3306/gearsgtc_java_panaderia?useTimeZone=true&serverTimezone=UTC&autoReconnect=true&useSSL=false");
             //Tamaño inicial de conexiones
             dataSource.setInitialSize(20);
             //Indica tiempo de sincronización en segundos
